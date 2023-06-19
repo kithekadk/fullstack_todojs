@@ -1,0 +1,70 @@
+.container{
+    display: flex;
+    justify-content: center;
+    gap:20px;
+}
+.pendingTasklist, .completedTasklist{
+
+    align-items: center;
+    width: 40vw;
+    padding: 20px;
+    box-shadow: 3px 3px 3px 3px rgb(227, 226, 226);
+}
+
+
+.taskContainerTitle{
+    display: flex;
+    justify-content: center;
+}
+
+#new-todo-form{
+    width: 30vw;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 3px 3px 3px 3px rgb(227, 226, 226);
+}
+.inputs input[type="text"], .inputs input[type="date"]{
+    padding:5px;
+    width:26vw;
+    margin-bottom: 10px;
+}
+.inputs input[type="submit"]{
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    background-color: green;
+    border: none;
+}
+.inputs button{
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    background-color: rgb(17, 145, 200);
+    border: none;
+}
+
+.main{
+    position: relative;
+}
+
+#create-new-todo{
+    position: absolute;
+    top:30%;
+    left:35vw;
+}
+#btn-create-todo{
+    padding: 10px 20px;
+    color: white;
+    background-color: green;
+    border: none;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+#btnclose, #btnsubmit{
+    cursor: pointer;
+}

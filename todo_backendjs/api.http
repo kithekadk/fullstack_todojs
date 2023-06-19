@@ -1,0 +1,31 @@
+POST http://localhost:4000/todos
+Content-Type: application/json
+
+{
+    "title": "My fifth todo",
+    "description": "This is what I will do",
+    "deadline": "2023-7-13"
+}
+
+### get all todos
+
+GET http://localhost:4000/todos
+Content-Type: application/json
+
+### get one todo
+GET http://localhost:4000/todos/2937d9c2-ff76-4781-9a97-8d200ddd45d5
+Content-Type: application/json
+
+### updating the todo
+PUT http://localhost:4000/todos/2937d9c2-ff76-4781-9a97-8d200ddd45d5
+Content-Type: application/json
+
+{
+    "title": "My third todo UPDATED",
+    "description": "This is what I will do ",
+    "deadline": "2023-7-13"
+}
+
+### deleting a todo
+DELETE http://localhost:4000/todos/2937d9c2-ff76-4781-9a97-8d200ddd45d5
+Content-Type: application/json

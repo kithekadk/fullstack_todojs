@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  database:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: tododb
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_SA_PASSWORD: Dan_TheJitu
+      MSSQL_PID: Developer
+    env_file:
+      - ./todo_backendjs/.env
+    ports:
+      - '1433:1433'
+    volumes:
+      - data:/var/opt/mssql
+
+  server:
+    depends_on:
+      - database
+    build: ./todo_backendjs/
+    container_name: server
+    restart: always
+    env_file:
+      - ./todo_backendjs/.env
+    ports:
+      - '4000:4000'
+    volumes:
+      - ./todo_backendjs/:/app
+      - /app/node_modules
+
+volumes:
+  data:
