@@ -27,5 +27,5 @@ Content-Type: application/json
 }
 
 ### deleting a todo
-DELETE http://localhost:4000/todos/2937d9c2-ff76-4781-9a97-8d200ddd45d5
+DELETE http://localhost:4000/todos/08bb3db6-7470-463f-8b30-90c332f9ab73
 Content-Type: application/json
