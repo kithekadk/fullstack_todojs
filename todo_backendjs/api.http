@@ -29,3 +29,7 @@ Content-Type: application/json
 ### deleting a todo
 DELETE http://localhost:4000/todos/08bb3db6-7470-463f-8b30-90c332f9ab73
 Content-Type: application/json
+
+### Mark todo as done
+PUT http://localhost:4000/todos/complete/3d54d319-3b8e-4062-a578-fec33f4f42c2
+Content-Type: application/json

@@ -90,11 +90,27 @@ const deleteTodo = async (req, res)=>{
     }
 }
 
+const markAsDone = async (req, res)=>{
+    try {
+        const {id} = req.params
+        const pool = await mssql.connect(sqlConfig)
+
+        await pool.request()
+        .input('id', id)
+        .execute('markAsDone')
+
+        return res.json({message: "todo marked as done"})
+    } catch (error) {
+        return res.json(error.message)
+    }
+}
+
 module.exports = 
 {
     insertTodo,
     getTodos,
     getOneTodo,
     updateTodo,
-    deleteTodo
+    deleteTodo,
+    markAsDone
 }
