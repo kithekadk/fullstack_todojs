@@ -9,6 +9,10 @@
     width: 40vw;
     padding: 20px;
     box-shadow: 3px 3px 3px 3px rgb(227, 226, 226);
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    
 }
 
 
@@ -66,5 +70,19 @@
 }
 
 #btnclose, #btnsubmit{
+    cursor: pointer;
+}
+
+/* DOM Elements */
+.taskitem{
+    background: white;
+    border: 2px rgb(210, 210, 210) solid;
+    border-radius: 20px;
+    padding: 10px  20px;
+    width:30vw;
+}
+
+.taskitem button{
+    padding: 5px 10px;
     cursor: pointer;
 }

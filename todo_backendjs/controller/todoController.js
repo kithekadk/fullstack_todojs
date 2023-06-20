@@ -78,9 +78,9 @@ const updateTodo = async (req, res)=>{
 const deleteTodo = async (req, res)=>{
     try {
         const {id} = req.params
-        const pool = mssql.connect(sqlConfig)
+        const pool = await mssql.connect(sqlConfig)
 
-        (await pool).request()
+        await pool.request()
         .input('id', id)
         .execute('deleteTodo')
 
