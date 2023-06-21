@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO LIST</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main">
+        <div class="title">
+            <h2>TODO LIST APP</h2>
+        </div>
+        <div style="display: flex; justify-content: space-around; padding: 10px;">
+            <button id="btn-create-todo">Create New Task</button>
+            <a href="index.html" id="btn-create-todo">Home</a>
+            <div style="display: flex; justify-content: center; gap: 10px;">
+                <a href ="login.html" id="loginurl">Login</a>
+                <a href ="signup.html" id="SignUpurl">Signup</a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="pendingTasklist">
+                <div class="taskContainerTitle"> 
+                    <h1>Pending Tasks</h1>
+                </div>
+                
+            </div>
+    
+            <div class="completedTasklist">
+                <div class="taskContainerTitle">
+                    <h1>Completed Tasks</h1>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="create-new-todo" style="display:none;">
+        <form action="" id="new-todo-form">
+            <h1>Input New Task</h1>
+            <p style="display: none; color: red;" id="fill-all-error">All inputs are required</p>
+            <div class="inputs">
+                <label for="">Task Name:</label><br>
+                <input type="text" name="taskname" id="txttaskname" placeholder="Input new task">
+            </div>
+            <div class="inputs">
+                <label for="">Task Description:</label><br>
+                <input type="text" name="taskdesc" id="txttaskdesc" placeholder="Input new task">
+            </div>
+            <div class="inputs">
+                <label for="">Deadline:</label><br>
+                <input type="date" name="deadline" id="txtdeadline" placeholder="Input new task">
+            </div>
+
+            <div class="inputs">
+                <input type="submit" value="Submit" id="btnsubmit">
+                <button type="button" id="btnclose">Cancel</button>
+                <!-- For testing purposes -->
+                <select name="" id="select-action">
+                    <option value="submit">Submit</option>
+                    <option value="cancel" id="btnclose">Cancel</option>
+                </select>
+            </div>
+        </form>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

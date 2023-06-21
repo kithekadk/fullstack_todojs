@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO LIST</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main">
+        <div class="title">
+            <h2>TODO LIST APP</h2>
+        </div>
+        <div style="display: flex; justify-content: space-around; padding: 10px;">
+            <a href="index.html" id="btn-create-todo" data-cy="home">Home</a>
+            <div style="display: flex; justify-content: center; gap: 10px;">
+                <a href ="signup.html" id="SignUpurl">Signup</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="Login">
+        <form action="" id="login-form">
+            <h1>Login</h1>
+            <p style="display: none; color: red;" id="fill-all-error">All inputs are required</p>
+            <div class="inputs">
+                <label for="">Email:</label><br>
+                <input type="email" name="taskname" id="txttaskname" placeholder="Input new task">
+            </div>
+            <div class="inputs">
+                <label for="">Password:</label><br>
+                <input type="text" name="taskdesc" id="txttaskdesc" placeholder="Input new task">
+            </div>
+
+
+            <div class="inputs">
+                <input type="submit" value="Login" id="btnsubmit">
+                <button type="reset" id="btnclose">Reset</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

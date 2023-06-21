@@ -2,14 +2,14 @@
 
 describe('Utilising basic features', ()=>{
     it('uses contains', ()=>{
-        cy.visit('http://127.0.0.1:5500/todo_frontend/')
+        cy.visit('http://127.0.0.1:5500/todo_frontend/todo.html')
         cy.contains('TODO LIST APP');
 
         cy.get('h2').contains('TODO LIST APP');
     })
 
     it('simulates click event', ()=>{
-        cy.visit('http://127.0.0.1:5500/todo_frontend/')
+        cy.visit('http://127.0.0.1:5500/todo_frontend/todo.html')
         cy.get('#btn-create-todo').click()
         cy.get('form').should('exist');
         cy.get('.inputs').find('#btnclose').click();
@@ -18,7 +18,7 @@ describe('Utilising basic features', ()=>{
     })
 
     it('simulates typing actions', ()=>{
-        cy.visit('http://127.0.0.1:5500/todo_frontend/')
+        cy.visit('http://127.0.0.1:5500/todo_frontend/todo.html')
         cy.get('#btn-create-todo').click()
         cy.get('form').should('exist');
         cy.get('#txttaskname').type('Task 1')
@@ -29,17 +29,17 @@ describe('Utilising basic features', ()=>{
     })
 
     it('explains assertions', ()=>{
-        cy.visit('http://127.0.0.1:5500/todo_frontend/');
+        cy.visit('http://127.0.0.1:5500/todo_frontend/todo.html');
         cy.get('h2').contains('TODO LIST APP').should('not.have.length.above', 1);
     })
 
     it('partial inputs', ()=>{
-        cy.visit('http://127.0.0.1:5500/todo_frontend/');
+        cy.visit('http://127.0.0.1:5500/todo_frontend/todo.html');
         cy.get('h2').contains('TODO LIST ').should('not.have.length.above', 1);
     })
 
     it('closes using a dropdown', ()=>{
-        cy.visit('http://127.0.0.1:5500/todo_frontend/');
+        cy.visit('http://127.0.0.1:5500/todo_frontend/todo.html');
         cy.get('#btn-create-todo').click()
         cy.get('form').should('exist');
         cy.get('#txttaskname').type('Task 1')

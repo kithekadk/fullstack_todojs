@@ -177,9 +177,10 @@
  * 
  */
 
-
+if(window.location.pathname == '/todo_frontend/todo.html'){
 window.addEventListener('load', ()=>{   
 
+    console.log(window.location.pathname);
     fetchTodos();
 
     let form_container = document.querySelector('#create-new-todo');
@@ -337,6 +338,7 @@ function fetchTodos(){
 })
 }
 
-async function markTodODone(){
+// async function markTodODone(){
     
+// }
 }
