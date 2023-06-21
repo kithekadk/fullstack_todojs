@@ -186,6 +186,7 @@ window.addEventListener('load', ()=>{
     let form_container = document.querySelector('#create-new-todo');
     let togglebutton = document.querySelector('#btn-create-todo');
     let closeform = document.querySelector('#btnclose');
+    let btnsubmit = document.querySelector('#btnsubmit');
     let create_todo_form = document.querySelector('#new-todo-form');
     let txttaskname = document.querySelector('#txttaskname');
     let txttaskdesc = document.querySelector('#txttaskdesc');
@@ -206,10 +207,13 @@ window.addEventListener('load', ()=>{
 
     create_todo_form.addEventListener('submit', (e)=>{
         e.preventDefault();
-
+        
+        
         let inputs = txttaskname.value && txttaskdesc.value && txtdeadline.value;
 
         if(inputs){
+            btnsubmit.value = 'Sending...'
+            btnsubmit.setAttribute('disabled', '')
             const promise = new Promise((resolve, reject)=>{
                 fetch('http://localhost:4000/todos', {
                     headers:{
@@ -236,7 +240,10 @@ window.addEventListener('load', ()=>{
             txttaskname.value = '';
             txttaskdesc.value = '';
             txtdeadline.value = '';
+            // btnsubmit.removeAttribute('disabled')
+            // btnsubmit.value = 'Submit'
         }else{
+            
             fill_all_error.style.display = 'block';
             setTimeout(() => {
                 fill_all_error.style.display = 'none';
