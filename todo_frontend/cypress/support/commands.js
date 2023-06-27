@@ -23,3 +23,15 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('createTask', ()=>{
+    cy.get('#btnsubmit').click();
+});
+
+Cypress.Commands.addQuery('getById', (id)=>{
+    let getFunction = cy.now('get', `[data-cy="${id}"]`) // now() allows to execute any cypress instruction immediately
+    return () =>{
+        let element = getFunction(); // executed when cypress actually runs your test instructions (i.e after queuing them)
+        return element;
+    }
+})
