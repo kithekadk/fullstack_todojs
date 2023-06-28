@@ -2,7 +2,6 @@ const {v4} = require ('uuid');
 const { sqlConfig } = require('../config/config');
 const mssql = require('mssql')
 
-// const {exec, query} = require('')
 
 const insertTodo = async (req, res)=>{
     try {

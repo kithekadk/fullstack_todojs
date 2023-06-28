@@ -33,3 +33,22 @@ Content-Type: application/json
 ### Mark todo as done
 PUT http://localhost:4000/todos/complete/3d54d319-3b8e-4062-a578-fec33f4f42c2
 Content-Type: application/json
+
+
+
+### Creating a user
+POST http://localhost:4000/users/createuser
+Content-Type: application/json
+
+{
+    "email": "gamesmy177@gmail.com",
+    "password": "12345678"
+}
+
+### User login
+POST http://localhost:4000/users/login
+Content-Type: application/json
+
+{
+    "email": "gamesmy177@gmail.com"
+}
