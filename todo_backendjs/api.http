@@ -2,8 +2,8 @@ POST http://localhost:4000/todos
 Content-Type: application/json
 
 {
-    "title": "My fifth todo",
-    "description": "This is what I will do",
+    "title": "My second todo",
+    "description": "I will code my nigga",
     "deadline": "2023-7-13"
 }
 
@@ -13,25 +13,25 @@ GET http://localhost:4000/todos
 Content-Type: application/json
 
 ### get one todo
-GET http://localhost:4000/todos/2937d9c2-ff76-4781-9a97-8d200ddd45d5
+GET http://localhost:4000/todos/a1e7b9c6-a7eb-4786-a24c-0b05d1b65e12
 Content-Type: application/json
 
 ### updating the todo
-PUT http://localhost:4000/todos/2937d9c2-ff76-4781-9a97-8d200ddd45d5
+PUT http://localhost:4000/todos/a1e7b9c6-a7eb-4786-a24c-0b05d1b65e12
 Content-Type: application/json
 
 {
-    "title": "My third todo UPDATED",
+    "title": "My first todo UPDATED",
     "description": "This is what I will do ",
     "deadline": "2023-7-13"
 }
 
 ### deleting a todo
-DELETE http://localhost:4000/todos/08bb3db6-7470-463f-8b30-90c332f9ab73
+DELETE http://localhost:4000/todos/a1e7b9c6-a7eb-4786-a24c-0b05d1b65e12
 Content-Type: application/json
 
 ### Mark todo as done
-PUT http://localhost:4000/todos/complete/3d54d319-3b8e-4062-a578-fec33f4f42c2
+PUT http://localhost:4000/todos/complete/a1e7b9c6-a7eb-4786-a24c-0b05d1b65e12
 Content-Type: application/json
 
 
@@ -50,5 +50,6 @@ POST http://localhost:4000/users/login
 Content-Type: application/json
 
 {
-    "email": "gamesmy177@gmail.com"
+    "email": "gamesmy177@gmail.com",
+    "password": "12345678"
 }
