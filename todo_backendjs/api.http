@@ -41,7 +41,7 @@ POST http://localhost:4000/users/createuser
 Content-Type: application/json
 
 {
-    "email": "gamesmy177@gmail.com",
+    "email": "dankinyi99@gmail.com",
     "password": "12345678"
 }
 
