@@ -177,6 +177,10 @@
  * 
  */
 
+
+// const {Cloudinary} = require('@cloudinary/url-gen')
+// const cld = new Cloudinary({cloud: {cloudName: 'dtn9kzx2v'}});
+
 if(window.location.pathname == '/todo_frontend/todo.html'){
 window.addEventListener('load', ()=>{   
 
@@ -191,6 +195,7 @@ window.addEventListener('load', ()=>{
     let txttaskname = document.querySelector('#txttaskname');
     let txttaskdesc = document.querySelector('#txttaskdesc');
     let txtdeadline = document.querySelector('#txtdeadline');
+    let txtimage= document.querySelector('#txtimage');
     let fill_all_error = document.querySelector('#fill-all-error')
 
     togglebutton.addEventListener('click', ()=>{
@@ -205,15 +210,43 @@ window.addEventListener('load', ()=>{
         form_container.style.display = 'none';
     })
 
+    txtimage.addEventListener('change', (event)=>{
+        // const CreateURL = new Promise((resolve, reject)=>{
+        const target = event.target
+
+        const files = target.files
+
+        if(files){
+            console.log(files[0]);
+
+            const formData = new FormData();
+            formData.append("file", files[0]);
+
+            formData.append("upload_preset", "3kconstructions")
+            formData.append("cloud_name", "dtn9kzx2v");
+
+            fetch('https://api.cloudinary.com/v1_1/dtn9kzx2v/image/upload', {           
+                method:"POST",
+                body:formData
+            }).then((res)=>res.json()
+            ).then(r=>console.log(r))
+        }
+    
+    })
+    // })
+
     create_todo_form.addEventListener('submit', (e)=>{
         e.preventDefault();
         
-        
-        let inputs = txttaskname.value && txttaskdesc.value && txtdeadline.value;
+        let inputs = txttaskname.value && txttaskdesc.value && txtdeadline.value && txtimage.value;
+
+        // onImageChange();
+
+        console.log(inputs);
 
         if(inputs){
-            btnsubmit.value = 'Sending...'
-            btnsubmit.setAttribute('disabled', '')
+            // btnsubmit.value = 'Sending...'
+            // btnsubmit.setAttribute('disabled', '')
             const promise = new Promise((resolve, reject)=>{
                 fetch('http://localhost:4000/todos', {
                     headers:{
@@ -224,8 +257,10 @@ window.addEventListener('load', ()=>{
                     body:JSON.stringify({
                         "title": txttaskname.value,
                         "description": txttaskdesc.value,
-                        "deadline": txtdeadline.value
+                        "deadline": txtdeadline.value,
+                        "image": txtimage.value
                     })
+
                 }).then(
                     res=> {resolve(res.json())}
                 ).catch(error=>{
@@ -240,6 +275,7 @@ window.addEventListener('load', ()=>{
             txttaskname.value = '';
             txttaskdesc.value = '';
             txtdeadline.value = '';
+            txtimage.value = '';
             // btnsubmit.removeAttribute('disabled')
             // btnsubmit.value = 'Submit'
         }else{
@@ -251,6 +287,12 @@ window.addEventListener('load', ()=>{
         }
     })
 })
+
+function onImageChange(event){
+    const target = event.target
+
+    console.log(target);
+}
 
 async function DBdeleteTask(id){
     const DeleteTodo = new Promise((resolve, reject)=>{

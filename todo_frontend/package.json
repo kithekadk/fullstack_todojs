@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@cloudinary/url-gen": "^1.10.2",
     "cypress": "^12.14.0"
   }
 }
